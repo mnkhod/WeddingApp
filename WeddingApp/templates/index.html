@@ -1,385 +1,397 @@
-{% load static %}
-<html lang="en">
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Хуримын Ёслол</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-        <!-- Third party plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-	<link href="{% static '/css/styles.css' %}" rel="stylesheet" />
-	<link href="staticfiles/css/styles.css" rel="stylesheet" />
+{% extends "base.html" %}
 
-	<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css" />
+{% block content %}
+<!-- Masthead-->
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center justify-content-center text-center">
+      <div class="col-lg-10 align-self-end">
+	<h1 class="text-uppercase text-white font-weight-bold">Хуримын Ёслолын Үйлчилгэний Сан</h1>
+	<hr class="divider my-4" />
+      </div>
+      <div class="col-lg-8 align-self-baseline">
+	<p class="text-white-75 font-weight-light mb-5">Монгол улсынхаа нэгэн сайхан гэр бүл байж, төрт ёсоо дээдэлж, түмэн олноо ивээж, үр хүүхэд, ахан дүүсээ энэрч явахын өлзийтэй сайн ерөөлийг дэвшүүлье.</p>
+	<a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Танилцах</a>
+      </div>
+    </div>
+  </div>
+</header>
 
-	<!-- If you use the default popups, use this. -->
-	<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
-	<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="fas mr-2 fa-1x fa-ring text-primary mb-0"></i> Хуримын Ёслол</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Бидний Тухай</a></li>
-                        <li class="nav-item">
-			  <a class="nav-link js-scroll-trigger" href="#portfolio">Үйлчилгээ</a>
-			</li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Холбоо Барих</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<!-- About-->
+<section class="bg-primary" id="about">
+  <div class="container h-100 d-flex align-items-center justify-content-center">
+    <div class="row d-flex flex-column justify-content-center align-items-center">
+      <div class="col-lg-8">
+	<h2 class="text-white text-center mt-0">Бид танд хэрэгтэй бүх зүйлийг авсан байна!</h2>
+	<hr class="divider light my-4" />
+	<p class="text-white-50 mb-4 text-center">Хурим бүр төлөвлөлтийн томоохон төлөвлөлт шаардагддаг тул
+	  танд тусламж заавал хэрэгтэй. Таны мөрөөдөж буй хуримыг бий болгоход бид танд туслах болно!</p>
+	<a class="btn btn-light btn-xl d-block mx-auto w-50 js-scroll-trigger" href="#portfolio">Үйлчилгээ Харах</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-10 align-self-end">
-                        <h1 class="text-uppercase text-white font-weight-bold">Хуримын Ёслолын Үйлчилгэний Сан</h1>
-                        <hr class="divider my-4" />
-                    </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-5">Монгол улсынхаа нэгэн сайхан гэр бүл байж, төрт ёсоо дээдэлж, түмэн олноо ивээж, үр хүүхэд, ахан дүүсээ энэрч явахын өлзийтэй сайн ерөөлийг дэвшүүлье.</p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Танилцах</a>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- About-->
-        <section class="bg-primary" id="about">
-            <div class="container h-100 d-flex align-items-center justify-content-center">
-                <div class="row d-flex flex-column justify-content-center align-items-center">
-                    <div class="col-lg-8">
-                        <h2 class="text-white text-center mt-0">Бид танд хэрэгтэй бүх зүйлийг авсан байна!</h2>
-                        <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4 text-center">Хурим бүр төлөвлөлтийн томоохон төлөвлөлт шаардагддаг тул 
-			  танд тусламж заавал хэрэгтэй. Таны мөрөөдөж буй хуримыг бий болгоход бид танд туслах болно!</p>
-                        <a class="btn btn-light btn-xl d-block mx-auto w-50 js-scroll-trigger" href="#portfolio">Үйлчилгээ Харах</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services-->
-        <section  class="page-section" id="portfolio" >
-            <div class="container-fluid p-0">
-                <h2 class="text-center mt-0">Бидний Үйлчилгээ</h2>
-		<hr class="w-25 mb-4">
-                <div class="row no-gutters">
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box  js-scroll-trigger" href="#yslol"
-                            ><img class="img-fluid" 
-			      src="https://images.unsplash.com/photo-1542302979846-c49b846da354?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-                            <div class="portfolio-box-caption">
-                                <div class="project-name">Хуримын Ёслолын Үйлчилгээ</div>
-                            </div></a
-                        >
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box js-scroll-trigger" href="#turees"
-                            ><img class="img-fluid" src="https://images.unsplash.com/photo-1529074463138-e350a73842d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80" alt="" />
-                            <div class="portfolio-box-caption">
-                                <div class="project-name">Түрээсийн Үйлчилгээ</div>
-                            </div></a
-                        >
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box js-scroll-trigger" href="#neriin"
-                            ><img class="img-fluid" src="https://images.unsplash.com/photo-1562616261-7bb659f860ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="" />
-                            <div class="portfolio-box-caption">
-                                <div class="project-name">Нэрийн Бүтээгдэхүүн</div>
-                            </div></a
-                        >
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box js-scroll-trigger" href="#surgalt"
-                            ><img class="img-fluid" src="https://images.unsplash.com/photo-1560541907-4d0de680e3a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" />
-                            <div class="portfolio-box-caption">
-                                <div class="project-name">Сургалт</div>
-                            </div></a
-                        >
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box js-scroll-trigger" href="#tuwluguu"
-                            ><img class="img-fluid" src="https://images.unsplash.com/photo-1506784242126-2a0b0b89c56a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1348&q=80" alt="" />
-                            <div class="portfolio-box-caption">
-                                <div class="project-name">Кальндарчилсан Төвлөгөө</div>
-                            </div></a
-                        >
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box js-scroll-trigger" href="#hamtragch"
-                            ><img class="img-fluid" src="https://images.unsplash.com/photo-1488684430052-f2d92fb178c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80" alt="" />
-                            <div class="portfolio-box-caption p-3">
-                                <div class="project-name">Хамтрагч Байгуулгийн Зуучлах Үйлчилгээ</div>
-                            </div></a
-                        >
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Services-->
+<section  class="page-section" id="portfolio" >
+  <div class="container-fluid p-0">
+    <h2 class="text-center mt-0">Бидний Үйлчилгээ</h2>
+    <hr class="w-25 mb-4">
+    <div class="row no-gutters">
+      <div class="col-lg-4 col-sm-6">
+	<a class="portfolio-box  js-scroll-trigger" href="#yslol"
+					     ><img class="img-fluid"
+		src="https://images.unsplash.com/photo-1542302979846-c49b846da354?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+					     <div class="portfolio-box-caption">
+					       <div class="project-name">Хуримын Ёслолын Үйлчилгээ</div>
+					     </div></a
+					     >
+      </div>
+      <div class="col-lg-4 col-sm-6">
+	<a class="portfolio-box js-scroll-trigger" href="#turees"
+					    ><img class="img-fluid" src="https://images.unsplash.com/photo-1529074463138-e350a73842d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80" alt="" />
+					    <div class="portfolio-box-caption">
+					      <div class="project-name">Түрээсийн Үйлчилгээ</div>
+					    </div></a
+					    >
+      </div>
+      <div class="col-lg-4 col-sm-6">
+	<a class="portfolio-box js-scroll-trigger" href="#neriin"
+					    ><img class="img-fluid" src="https://images.unsplash.com/photo-1562616261-7bb659f860ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="" />
+					    <div class="portfolio-box-caption">
+					      <div class="project-name">Нэрийн Бүтээгдэхүүн</div>
+					    </div></a
+					    >
+      </div>
+      <div class="col-lg-4 col-sm-6">
+	<a class="portfolio-box js-scroll-trigger" href="#surgalt"
+					    ><img class="img-fluid" src="https://images.unsplash.com/photo-1560541907-4d0de680e3a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" />
+					    <div class="portfolio-box-caption">
+					      <div class="project-name">Сургалт</div>
+					    </div></a
+					    >
+      </div>
+      <div class="col-lg-4 col-sm-6">
+	<a class="portfolio-box js-scroll-trigger" href="#tuwluguu"
+					    ><img class="img-fluid" src="https://images.unsplash.com/photo-1506784242126-2a0b0b89c56a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1348&q=80" alt="" />
+					    <div class="portfolio-box-caption">
+					      <div class="project-name">Кальндарчилсан Төвлөгөө</div>
+					    </div></a
+					    >
+      </div>
+      <div class="col-lg-4 col-sm-6">
+	<a class="portfolio-box js-scroll-trigger" href="#hamtragch"
+					    ><img class="img-fluid" src="https://images.unsplash.com/photo-1488684430052-f2d92fb178c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80" alt="" />
+					    <div class="portfolio-box-caption p-3">
+					      <div class="project-name">Хамтрагч Байгуулгийн Зуучлах Үйлчилгээ</div>
+					    </div></a
+					    >
+      </div>
+    </div>
+  </div>
+</section>
 
 
-	<!-- Хуримын Ёслолын Үйлчилгээ -->
-	<section class="page-section" id="yslol">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-sm-12">
-		<h1 class="text-uppercase font-weight-bolder text-center">Хуримын Ёслолын Үйлчилгээ</h1>
-		<hr class="w-25 h-25">
+<!-- Хуримын Ёслолын Үйлчилгээ -->
+<section class="page-section" id="yslol">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+	<h1 class="text-uppercase font-weight-bolder text-center">Хуримын Ёслолын Үйлчилгээ</h1>
+	<hr class="w-25 h-25">
+      </div>
+    </div>
+
+    <div class="row mt-5">
+
+      {% for i in yslol %}
+      <div class="col-sm-12 mt-4">
+	<div class="card shadow">
+	  <div class="row">
+	    <div class="col-sm-4">
+	      <img class="card-img" src="{{i.picture}}">
+	    </div>
+	    <div class="col-sm-8">
+	      <div class="card-body d-flex flex-column h-100">
+		<h4 class="card-title font-weight-bold">{{i.name}}</h4>
+		<hr class="w-50 m-hr-width-2">
+		<p class="text-right font-weight-bold h3 flex-grow-1 my-auto" >{{i.price}}$</p>
+		{% if request.user.is_authenticated %}
+		<form id="Hurimiin_Yslol_Uilchilgee{{i.id}}" method="POST" action="{% url "cartAdd" %}">
+		  {% csrf_token %}
+		  <input type="hidden" value="{{i.id}}" name="itemID">
+		  <input type="hidden" value="Hurimiin_Yslol_Uilchilgee" name="itemName">
+		</form>
+		<button type="submit" form="Hurimiin_Yslol_Uilchilgee{{i.id}}"
+		        class="ml-auto mt-auto w-75 btn btn-primary d-block shadow-sm">Сагсанд Хийх</button>
+		{% else %}
+		<a href="//" class="basketadd ml-auto mt-auto w-75 btn btn-primary d-block shadow-sm basketadd">Сагсанд Хийх</a>
+		{% endif %}
 	      </div>
 	    </div>
+	  </div>
+	</div>
+      </div>
+      {% endfor %}
 
-	    <div class="row mt-5">
+    </div>
+  </div>
 
-	      {% for i in yslol %}
-	      <div class="col-sm-12 mt-4">
-		<div class="card shadow">
-		  <div class="row">
-		    <div class="col-sm-4">
-		      <img class="card-img" src="{{i.picture}}">
-		    </div>
-		    <div class="col-sm-8">
-		      <div class="card-body d-flex flex-column h-100">
-			<h4 class="card-title font-weight-bold">{{i.name}}</h4>
-			<hr class="w-50 m-hr-width-2">
-			<p class="text-right font-weight-bold h3 flex-grow-1 my-auto" >{{i.price}}$</p>
-			<a href="#" class="ml-auto mt-auto w-75 btn btn-primary d-block shadow-sm">Сагсанд Хийх</a>
-		      </div>
-		    </div>
+  <!-- Түрээсийн Үйлчилгээ -->
+  <section class="page-section" id="turees">
+    <div class="container">
+      <div class="row mb-5">
+	<div class="col-sm-12">
+	  <h1 class="text-uppercase font-weight-bolder text-center">Түрээсийн Үйлчилгээ</h1>
+	  <hr class="w-25 h-25">
+	</div>
+      </div>
+      <div class="row">
+	{% for i in turees %}
+	<div class="col-sm-4 h-100">
+	  <div class="card h-75 shadow">
+	    <img src="{{i.picture}}"
+	  class="card-img-top h-50 m-img-fit m-img-top">
+	    <div class="card-body d-flex flex-column justify-content-center">
+	      <h5 class="card-title text-center font-weight-bolder">{{i.name}}</h5>
+	      <hr class="w-50">
+	      <!-- CARD DESCRIPTION -->
+	      <div class="container-fluid my-2">
+		<div class="row">
+		  <div class="col-6">
+		    <p class="text-left font-italic" >Үнэ</p>
+		  </div>
+		  <div class="col-6">
+		    <p class="text-right font-weight-bold h6" >{{i.price}}$</p>
 		  </div>
 		</div>
 	      </div>
-	    {% endfor %}
 
-	    </div>
-	  </div>
-	  
-	<!-- Түрээсийн Үйлчилгээ -->
-	<section class="page-section" id="turees">
-	  <div class="container">
-	    <div class="row mb-5">
-	      <div class="col-sm-12">
-		<h1 class="text-uppercase font-weight-bolder text-center">Түрээсийн Үйлчилгээ</h1>
-		<hr class="w-25 h-25">
+	      <div class="container">
+		<hr class="w-50">
+		{% if request.user.is_authenticated %}
+		<form id="Tureesiin_Uilchilgee{{i.id}}" method="POST" action="{% url "cartAdd" %}">
+		  {% csrf_token %}
+		  <input type="hidden" value="{{i.id}}" name="itemID">
+		  <input type="hidden" value="Tureesiin_Uilchilgee" name="itemName">
+		</form>
+		<button type="submit" form="Tureesiin_Uilchilgee{{i.id}}"
+		        class="m-auto w-75 btn btn-primary d-block shadow-sm">Сагсанд Хийх</button>
+		{% else %}
+		<a href="//" class="basketadd m-auto w-75 btn btn-primary d-block shadow-sm basketadd">Сагсанд Хийх</a>
+		{% endif %}
 	      </div>
 	    </div>
+	  </div>
+	</div>
+	{% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Нэрийн Бүтээгдэхүүн -->
+  <section class="page-section" id="neriin">
+    <div class="container">
+      <div class="row">
+	<div class="col-sm-12">
+	  <h1 class="text-uppercase font-weight-bolder text-center">Нэрийн Бүтээгдэхүүн</h1>
+	  <hr class="w-25 h-25">
+	</div>
+      </div>
+
+      <div class="row mt-5">
+
+	{% for i in neriin %}
+	<div class="col-sm-3">
+	  <div class="card border-0">
+	    <h6 class="card-title shadow-sm border py-2 bg-white text-center font-weight-bold">{{i.name}}</h6>
+	    <img class="rounded card-img shadow-sm" height="250" src="{{i.picture}}">
+	    <div class="card-body pt-3">
+	      <p class="text-center font-weight-bold h5 flex-grow-1" >{{i.price}}$</p>
+		{% if request.user.is_authenticated %}
+		<form id="Neriin_Buteegdehuun{{i.id}}" method="POST" action="{% url "cartAdd" %}">
+		  {% csrf_token %}
+		  <input type="hidden" value="{{i.id}}" name="itemID">
+		  <input type="hidden" value="Neriin_Buteegdehuun" name="itemName">
+		</form>
+		<button type="submit" form="Neriin_Buteegdehuun{{i.id}}"
+		        class="position-relative m-z-2 mt-3 m-auto w-100 btn btn-outline-primary d-block shadow-sm basketadd">Сагсанд Хийх</button>
+		{% else %}
+		<a href="//" class="position-relative m-z-2 mt-3 m-auto w-100 btn btn-outline-primary d-block shadow-sm basketadd">Сагсанд Хийх</a>
+		{% endif %}
+	    </div>
+	  </div>
+	</div>
+	{% endfor %}
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Сургалт  -->
+  <section class="page-section" id="surgalt">
+    <div class="container">
+      <div class="row">
+	<div class="col-sm-12">
+	  <h1 class="text-uppercase font-weight-bolder text-center">Сургалт</h1>
+	  <hr class="w-25 h-25">
+	</div>
+      </div>
+
+      <div class="row mt-5">
+	{% for i in surgalt %}
+	<div class="col-sm-6 mt-2">
+	  <div class="card shadow">
 	    <div class="row">
-	      {% for i in turees %}
-		<div class="col-sm-4 h-100">
-		    <div class="card h-75 shadow">
-		      <img src="{{i.picture}}" 
-			   class="card-img-top h-50 m-img-fit m-img-top">
-		      <div class="card-body d-flex flex-column justify-content-center">
-			<h5 class="card-title text-center font-weight-bolder">{{i.name}}</h5>
-			<hr class="w-50">
-			<!-- CARD DESCRIPTION -->
-			<div class="container-fluid my-2">
-			  <div class="row">
-			    <div class="col-6">
-			      <p class="text-left font-italic" >Үнэ</p>
-			    </div>
-			    <div class="col-6">
-			      <p class="text-right font-weight-bold h6" >{{i.price}}$</p>
-			    </div>
-			  </div>
-			</div>
-
-			<div class="container">
-			    <hr class="w-50">
-			    <a href="#" class="btn btn-primary d-block shadow-sm">Сагсанд Хийх</a>
-			</div>
-		      </div>
-		    </div>
-		</div>
-	      {% endfor %}
-	    </div>
-	  </div>
-	</section>
-
-	
-
-	<!-- Нэрийн Бүтээгдэхүүн -->
-	<section class="page-section" id="neriin">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-sm-12">
-		<h1 class="text-uppercase font-weight-bolder text-center">Нэрийн Бүтээгдэхүүн</h1>
-		<hr class="w-25 h-25">
+	      <div class="col-sm-6">
+		<img class="card-img" height="200" src="{{i.picture}}">
 	      </div>
-	    </div>
-
-	    <div class="row mt-5">
-
-	      {% for i in neriin %}
-		<div class="col-sm-3">
-		  <div class="card border-0">
-		    <h6 class="card-title shadow-sm border py-2 bg-white text-center font-weight-bold">{{i.name}}</h6>
-		    <img class="rounded card-img shadow-sm" height="250" src="{{i.picture}}">
-		    <div class="card-body pt-3">
-		      <p class="text-center font-weight-bold h5 flex-grow-1" >{{i.price}}$</p>
-		      <a href="#" class="position-relative m-z-2 mt-3 btn btn-outline-primary d-block shadow-sm">Сагсанд Хийх</a>
-		    </div>
-		  </div>
-		</div>
-	      {% endfor %}
-
-	    </div>
-	  </div>
-	  
-	</section>
-
-
-	<!-- Сургалт  -->
-	<section class="page-section" id="surgalt">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-sm-12">
-		<h1 class="text-uppercase font-weight-bolder text-center">Сургалт</h1>
-		<hr class="w-25 h-25">
-	      </div>
-	    </div>
-
-	    <div class="row mt-5">
-	      {% for i in surgalt %}
-		<div class="col-sm-6 mt-2">
-		  <div class="card shadow">
-		    <div class="row">
-		      <div class="col-sm-6">
-			<img class="card-img" height="200" src="{{i.picture}}">
-		      </div>
-		      <div class="col-sm-6">
-			<div class="card-body d-flex flex-column h-100 justify-content-center">
-			  <h5 class="card-title text-center font-weight-bold m-0">{{i.name}}</h5>
-			  <hr class="w-75 m-hr-width-2 my-0 mt-3">
-			  <p class="text-center my-3 font-weight-bold h6" >{{i.price}}$</p>
-			  <a href="#" class=" btn btn-outline-primary d-block shadow-sm">Сагсанд Хийх</a>
-			</div>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-	      {% endfor %}
-
-	    </div>
-	  </div>
-	</section>
-
-	<!-- Кальндарчилсан Төвлөгөө -->
-	<section class="page-section" id="tuwluguu">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-sm-12">
-		<h1 class="text-uppercase font-weight-bolder text-center">Кальндарчилсан Төвлөгөө</h1>
-		<hr class="w-25 h-25">
-	      </div>
-	    </div>
-
-	    <div class="row mt-5">
-	      <div class="col">
-		<div id="calendar" style="height: 800px"></div>
-	      </div>
-	    </div>
-	  </div>
-
-	</section>
-	  
-	
-	<!-- Хамтрагч Байгуулгийн Зуучлах Үйлчилгээ -->
-	<section class="page-section" id="hamtragch">
-	  <div class="container">
-	    <div class="row mb-5">
-	      <div class="col-sm-12">
-		<h1 class="text-uppercase font-weight-bolder text-center">Хамтрагч Байгуулгийн Зуучлах Үйлчилгээ</h1>
-		<hr class="w-25 h-25">
-	      </div>
-	    </div>
-	   {% for i in baiguulga %}
-	    <div class="row mt-4 shadow">
-	      <div class="col-sm-4">
-		<img class="card-img" src="{{i.picture}}">
-	      </div>
-	      <div class="col-sm-8">
-		<div class="card-body d-flex flex-column h-100">
-		  <h4 class="card-title font-weight-bold">{{i.name}}</h4>
-		  <hr class="w-50 m-hr-width-2 mr-auto ml-0">
-		  <p class="text-right font-weight-bold h3 flex-grow-1 my-auto" >{{i.price}}$</p>
-		  <a href="#" class="ml-auto mt-auto w-75 btn btn-primary d-block shadow-sm">Сагсанд Хийх</a>
+	      <div class="col-sm-6">
+		<div class="card-body d-flex flex-column h-100 justify-content-center">
+		  <h5 class="card-title text-center font-weight-bold m-0">{{i.name}}</h5>
+		  <hr class="w-75 m-hr-width-2 my-0 mt-3">
+		  <p class="text-center my-3 font-weight-bold h6" >{{i.price}}$</p>
+		  {% if request.user.is_authenticated %}
+		  <form id="Surgalt{{i.id}}" method="POST" action="{% url "cartAdd" %}">
+		    {% csrf_token %}
+		    <input type="hidden" value="{{i.id}}" name="itemID">
+		    <input type="hidden" value="Surgalt" name="itemName">
+		  </form>
+		  <button type="submit" form="Surgalt{{i.id}}"
+			  class=" btn btn-outline-primary d-block shadow-sm basketadd">Сагсанд Хийх</button>
+		  {% else %}
+		  <a href="//" class=" btn btn-outline-primary d-block shadow-sm basketadd">Сагсанд Хийх</a>
+		  {% endif %}
 		</div>
 	      </div>
 	    </div>
-	   {% endfor %}
 	  </div>
-	</section>
+	</div>
+	{% endfor %}
 
-        <!-- Contact-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="mt-0">Бидэнтэй Холбоо Бариарай</h2>
-                        <hr class="divider my-4" />
-			<p class="text-muted mb-5">Бидэнд мэдэгдэхийг хүсч байгаа зүйл байна уу?<br>Танд сэтгэгдэл эсвэл санал хуваалцах эсэхээс үл хамааран бид танаас хариу хүлээж байна!</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-                        <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-                        <div>80122654</div>
-                    </div>
-                    <div class="col-lg-4 mr-auto text-center">
-                        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i
-                        ><!-- Make sure to change the email address in BOTH the anchor text and the link target below!--><a class="d-block" href="mailto:contact@yourwebsite.com">gereltmaa@gmail.com</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="bg-light py-5">
-            <div class="container"><div class="small text-center text-muted"> 2020 © - Gereltmaa</div></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-        <!-- Core theme JS-->
-	<script src="{% static 'js/scripts.js'%}"></script>
-        <!-- CALENDAR -->
-	<script src="https://uicdn.toast.com/tui.code-snippet/latest/tui-code-snippet.js"></script>
-	<script src="https://uicdn.toast.com/tui.dom/v3.0.0/tui-dom.js"></script>
-	<script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
-	<script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
-	<script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
+      </div>
+    </div>
+  </section>
 
-	<script>
-	  var Calendar = tui.Calendar; 
+  <!-- Кальндарчилсан Төвлөгөө -->
+  <section class="page-section" id="tuwluguu">
+    <div class="container">
+      <div class="row">
+	<div class="col-sm-12">
+	  <h1 class="text-uppercase font-weight-bolder text-center">Кальндарчилсан Төвлөгөө</h1>
+	  <hr class="w-25 h-25">
+	</div>
+      </div>
 
-	  var calendar = new Calendar('#calendar', {
-	    defaultView: 'month',
-	    taskView: true,
-	    useCreationPopup: true,
-	    useDetailPopup: true,
-	    template: {
-	      monthDayname: function(dayname) {
-		return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
-	      },
-	    }
-	    });
-	</script>
-</body>
-</html>
+      <div class="row mt-5">
+	<div class="col">
+	  <div id="calendar" style="height: 800px"></div>
+	</div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Хамтрагч Байгуулгийн Зуучлах Үйлчилгээ -->
+  <section class="page-section" id="hamtragch">
+    <div class="container">
+      <div class="row mb-5">
+	<div class="col-sm-12">
+	  <h1 class="text-uppercase font-weight-bolder text-center">Хамтрагч Байгуулгийн Зуучлах Үйлчилгээ</h1>
+	  <hr class="w-25 h-25">
+	</div>
+      </div>
+      {% for i in baiguulga %}
+      <div class="row mt-4 shadow">
+	<div class="col-sm-4">
+	  <img class="card-img" src="{{i.picture}}">
+	</div>
+	<div class="col-sm-8">
+	  <div class="card-body d-flex flex-column h-100">
+	    <h4 class="card-title font-weight-bold">{{i.name}}</h4>
+	    <hr class="w-50 m-hr-width-2 mr-auto ml-0">
+	    <p class="text-right font-weight-bold h3 flex-grow-1 my-auto" >{{i.price}}$</p>
+		  {% if request.user.is_authenticated %}
+		  <form id="Hamtragch_Baiguulgiin_Zuuchlah_Uilchilgee{{i.id}}" method="POST" action="{% url "cartAdd" %}">
+		    {% csrf_token %}
+		    <input type="hidden" value="{{i.id}}" name="itemID">
+		    <input type="hidden" value="Hamtragch_Baiguulgiin_Zuuchlah_Uilchilgee" name="itemName">
+		  </form>
+		  <button type="submit" form="Hamtragch_Baiguulgiin_Zuuchlah_Uilchilgee{{i.id}}"
+			  class="ml-auto mt-auto w-75 btn btn-primary d-block shadow-sm basketadd">Сагсанд Хийх</button>
+		  {% else %}
+		  <a href="//" class="ml-auto mt-auto w-75 btn btn-primary d-block shadow-sm basketadd">Сагсанд Хийх</a>
+		  {% endif %}
+	  </div>
+	</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Contact-->
+  <section class="page-section" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+	<div class="col-lg-8 text-center">
+	  <h2 class="mt-0">Бидэнтэй Холбоо Бариарай</h2>
+	  <hr class="divider my-4" />
+	  <p class="text-muted mb-5">Бидэнд мэдэгдэхийг хүсч байгаа зүйл байна уу?<br>Танд сэтгэгдэл эсвэл санал хуваалцах эсэхээс үл хамааран бид танаас хариу хүлээж байна!</p>
+	</div>
+      </div>
+      <div class="row">
+	<div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+	  <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+	  <div>80122654</div>
+	</div>
+	<div class="col-lg-4 mr-auto text-center">
+	  <i class="fas fa-envelope fa-3x mb-3 text-muted"></i
+	  ><!-- Make sure to change the email address in BOTH the anchor text and the link target below!--><a class="d-block" href="mailto:contact@yourwebsite.com">gereltmaa@gmail.com</a>
+	</div>
+      </div>
+    </div>
+  </section>
+
+  {% endblock %}
+
+{% block js %}
+    <!-- CALENDAR -->
+
+    <script src="https://uicdn.toast.com/tui.code-snippet/latest/tui-code-snippet.js"></script>
+    <script src="https://uicdn.toast.com/tui.dom/v3.0.0/tui-dom.js"></script>
+    <script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
+    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
+    <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
+
+    <script>
+      var Calendar = tui.Calendar;
+
+      var calendar = new Calendar('#calendar', {
+	defaultView: 'month',
+	taskView: true,
+	useCreationPopup: true,
+	useDetailPopup: true,
+	template: {
+	  monthDayname: function(dayname) {
+	    return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
+	  },
+	}
+      });
+
+      $('.basketadd').each(function(index,value){
+	$(this).click(function(){
+	  let x = $("#bcount").text();	  
+
+	  x = parseInt(x) + 1;
+	  $("#bcount").text(x);
+
+	});
+      });
+    </script>
+
+{% endblock %}

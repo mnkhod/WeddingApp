@@ -27,7 +27,7 @@ SECRET_KEY = 'haq9s#x8%duhtd#ea1z^qjryaoeb(95#k*hubic@r(6l%ntn(q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['diplomaweddingwebsite.herokuapp.com']
+ALLOWED_HOSTS = ['diplomaweddingwebsite.herokuapp.com','*']
 
 
 # Application definition

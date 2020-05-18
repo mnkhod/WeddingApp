@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container-fluid position-relative h-100 p-0 m-0 d-flex align-items-center justify-content-center">
+    <div style="background-image:url('https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');background-size:cover;background-position:center;filter:brightness(50%);z-index:-1"
+	 class="position-absolute w-100 h-100"></div>
+
+    <form action="" method="post">
+      {% if done %}
+	{% csrf_token %}
+	<h5 class="text-center text-white mb-3">{{done}}</h5>
+
+	{% if taken %}
+	  <a href="{% url 'register' %}" class="btn btn-primary m-auto w-75 d-block">Go Back To Register Page</a>
+	{% else %}
+	  <a href="{% url 'login' %}" class="btn btn-primary m-auto w-75 d-block">Go Back To Login Page</a>
+	{% endif %}
+
+      {% else %}
+	  {% csrf_token %}
+
+	  {% for f in form %}
+	  <div class="form-group">
+	    <label for="{{f.id_for_label}}" class="text-white text-center w-100" >{{f.label}}</label>
+	    {{f}}
+	  </div>
+	  {% endfor %}
+
+
+	  {% for e in form.errors %}
+	    <h6 class="text-danger my-3 text-center">{{e}}</h6>
+	  {% endfor %}
+
+	  {% if invalid %}
+	  <h6 class="text-danger my-3 text-center">{{invalid}}</h6>
+	  {% endif %}
+
+	  <button class="btn btn-primary w-100 mt-5" type="submit">Register</button>
+      {% endif %}
+    </form>
+
+  </div>
+{% endblock %}

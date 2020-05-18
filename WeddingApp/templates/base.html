@@ -1,0 +1,107 @@
+{% load static %}
+<html lang="en">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Хуримын Ёслол</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+  <!-- Third party plugin CSS-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="{% static '/css/styles.css' %}" rel="stylesheet" />
+  <link href="staticfiles/css/styles.css" rel="stylesheet" />
+
+  <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css" />
+
+  <!-- If you use the default popups, use this. -->
+  <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
+  <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css" />
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+      <div class="container">
+	<a class="navbar-brand js-scroll-trigger" href="{% url 'main' %}#page-top"><i class="fas mr-2 fa-1x fa-ring text-primary mb-0"></i> Хуримын Ёслол</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+	<div class="collapse navbar-collapse" id="navbarResponsive">
+	  <ul class="navbar-nav ml-auto my-2 my-lg-0">
+	    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'main' %}#about">Бидний Тухай</a></li>
+	    <li class="nav-item">
+	      <a class="nav-link js-scroll-trigger" href="{% url 'main' %}#portfolio">Үйлчилгээ</a>
+	    </li>
+	    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'main' %}#contact">Холбоо Барих</a></li>
+	    {% if request.user.is_authenticated %}
+	      <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Гарах</a></li>
+	    {% else %}
+	      <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Нэвтрэх</a></li>
+	      <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Бүртгүүлэх</a></li>
+	    {% endif %}
+	    <li class="nav-item">
+
+	    {% if request.user.is_authenticated %}
+	      <a class="nav-link js-scroll-trigger" href="{% url 'cart' %}">
+		<i class="fas fa-shopping-basket text-primary h5"></i><span class="text-dark bg-white py-1 px-2 rounded-circle 
+		" id="bcount" >{{cartSize}}</span>
+	      </a>
+	    {% else %}
+	      <a class="nav-link js-scroll-trigger" href="{% url 'cart' %}">
+		<i class="fas fa-shopping-basket text-primary h5"></i><span class="text-dark bg-white py-1 px-2 rounded-circle 
+			  " id="bcount" >0</span>
+	      </a>
+	    {% endif %}
+	    </li>
+	  </ul>
+	</div>
+      </div>
+    </nav>
+
+    {% if messages %}
+      {% for m in messages %}
+	<div class="toast position-fixed" style="top:13%;right:2%;z-index:2;" role="alert" aria-live="assertive" aria-atomic="true">
+	  <div class="toast-header d-flex justify-content-end bg-white border-0">
+	    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+	      <span aria-hidden="true" class="text-primary">&times;</span>
+	    </button>
+	  </div>
+	  <div class="text-center toast-body text-primary bg-white">{{m|safe}}</div>
+	</div>
+      {% endfor %}
+    {% endif %}
+
+
+    {% block content %}
+    {% endblock %}
+
+
+
+    <!-- Footer-->
+    <footer class="bg-light py-5">
+      <div class="container"><div class="small text-center text-muted"> 2020 © - Gereltmaa</div></div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{% static 'js/scripts.js'%}"></script>
+
+    {% if messages %}
+    <script>
+      $('.toast').toast({autohide:false,delay:3000})
+      $('.toast').toast('show')
+    </script>
+    {% endif %}
+
+    {% block js %}
+    {% endblock %}
+
+  </body>
+</html>

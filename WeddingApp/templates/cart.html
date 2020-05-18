@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container-fluid bg-secondary p-5 px-5 py-5 d-flex flex-column justify-content-center align-items-center">
+    <h2 class="text-white my-5 pt-5">Сайн байна уу хэрэглэгч , "{{user}}"</h2>
+
+    <div class="container bg-primary p-5">
+      <div class="row">
+	<div class="col-sm-12">
+	  <h1 class="text-uppercase text-white font-weight-bolder text-center">Таны Сагс</h1>
+	  <hr class="w-25 h-25 border-white">
+	</div>
+      </div>
+
+      <div class="row mt-5">
+
+	{% for i in yslol %}
+	<div class="col-sm-12 mt-4">
+	  <div class="card shadow">
+	    <div class="row">
+	      <div class="col-sm-4">
+		<img class="card-img" src="{{i.picture}}">
+	      </div>
+	      <div class="col-sm-8">
+		<div class="card-body d-flex flex-column h-100">
+		  <h4 class="card-title font-weight-bold">{{i.name}}</h4>
+		  <hr class="w-50 m-hr-width-2">
+		  <p class="item-price text-right font-weight-bold h3 flex-grow-1 my-auto" >{{i.price}}$</p>
+		  <a href="//" class="ml-auto mt-auto w-75 btn btn-primary d-block shadow-sm basketadd">Хасах</a>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	{% endfor %}
+
+	{% for i in surgalt %}
+	<div class="col-sm-12 mt-4">
+	  <div class="card shadow">
+	    <div class="row">
+	      <div class="col-sm-4">
+		<img class="card-img" src="{{i.picture}}">
+	      </div>
+	      <div class="col-sm-8">
+		<div class="card-body d-flex flex-column h-100">
+		  <h4 class="card-title font-weight-bold">{{i.name}}</h4>
+		  <hr class="w-50 m-hr-width-2">
+		  <p class="item-price text-right font-weight-bold h3 flex-grow-1 my-auto" >{{i.price}}$</p>
+		  <a href="//" class="ml-auto mt-auto w-75 btn btn-primary d-block shadow-sm basketadd">Хасах</a>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	{% endfor %}
+
+	{% for i in turees %}
+	<div class="col-sm-12 mt-4">
+	  <div class="card shadow">
+	    <div class="row">
+	      <div class="col-sm-4">
+		<img class="card-img" src="{{i.picture}}">
+	      </div>
+	      <div class="col-sm-8">
+		<div class="card-body d-flex flex-column h-100">
+		  <h4 class="card-title font-weight-bold">{{i.name}}</h4>
+		  <hr class="w-50 m-hr-width-2">
+		  <p class="item-price text-right font-weight-bold h3 flex-grow-1 my-auto" >{{i.price}}$</p>
+		  <a href="//" class="ml-auto mt-auto w-75 btn btn-primary d-block shadow-sm basketadd">Хасах</a>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	{% endfor %}
+
+	{% for i in neriin %}
+	<div class="col-sm-12 mt-4">
+	  <div class="card shadow">
+	    <div class="row">
+	      <div class="col-sm-4">
+		<img class="card-img" src="{{i.picture}}">
+	      </div>
+	      <div class="col-sm-8">
+		<div class="card-body d-flex flex-column h-100">
+		  <h4 class="card-title font-weight-bold">{{i.name}}</h4>
+		  <hr class="w-50 m-hr-width-2">
+		  <p class="item-price text-right font-weight-bold h3 flex-grow-1 my-auto" >{{i.price}}$</p>
+		  <a href="//" class="ml-auto mt-auto w-75 btn btn-primary d-block shadow-sm basketadd">Хасах</a>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	{% endfor %}
+
+	{% for i in baiguulga %}
+	<div class="col-sm-12 mt-4">
+	  <div class="card shadow">
+	    <div class="row">
+	      <div class="col-sm-4">
+		<img class="card-img" src="{{i.picture}}">
+	      </div>
+	      <div class="col-sm-8">
+		<div class="card-body d-flex flex-column h-100">
+		  <h4 class="card-title font-weight-bold">{{i.name}}</h4>
+		  <hr class="w-50 m-hr-width-2">
+		  <p class="item-price text-right font-weight-bold h3 flex-grow-1 my-auto" >{{i.price}}$</p>
+		  <a href="//" class="ml-auto mt-auto w-75 btn btn-primary d-block shadow-sm basketadd">Хасах</a>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	{% endfor %}
+      </div>
+
+      <div class="row mt-4">
+	<div class="col-sm-12">
+	  <hr class="w-25 h-25 border-white">
+	  <h5 class="text-uppercase text-white font-weight-bolder text-right">Нийт</h5>
+	  <h3 id="full-price" class="text-uppercase text-white font-weight-bolder text-right mb-5">$950000</h3>
+	  
+	  <form action="{% url 'zahialga' %}" method="get">
+	    <button class="btn btn-success m-auto w-75 d-block py-3" type="submit"><span class="h2">ЗАХИАЛАХ</span></button>
+	  </form>
+	  <br class="mt-5">
+	</div>
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block js %}
+  <script>
+    let sum = 0;
+    $(".item-price").each( function(){
+      sum += parseInt($(this).text());
+      console.log(sum)
+    } )
+
+    if(sum == 0){
+      $("#full-price").text("$ 0");
+    }else{
+      $("#full-price").text("$ " + sum);
+    }
+  </script>
+{% endblock %}

@@ -4,7 +4,9 @@ from .models import Tureesiin_Uilchilgee
 from .models import Neriin_Buteegdehuun
 from .models import Surgalt
 from .models import Hamtragch_Baiguulgiin_Zuuchlah_Uilchilgee
+from .models import Cart
 
+admin.site.register(Cart)
 
 
 @admin.register(Hamtragch_Baiguulgiin_Zuuchlah_Uilchilgee)
