@@ -7,8 +7,9 @@ from .models import Tureesiin_Uilchilgee
 from .models import Neriin_Buteegdehuun
 from .models import Surgalt
 from .models import Hamtragch_Baiguulgiin_Zuuchlah_Uilchilgee
-from .models import Cart
+from .models import Cart , Calender
 from .forms import LoginForm,RegisterForm
+import datetime
 
 from django.contrib.auth import authenticate, login
 
@@ -31,6 +32,11 @@ def cartAdd(req):
     if(item_name == 'Hurimiin_Yslol_Uilchilgee'):
         item_sub = Hurimiin_Yslol_Uilchilgee.objects.get(pk=item_id)
         user_item.yslol.add(item_sub)
+
+    if(item_name == 'Calender'):
+        item_sub = Calender(title=req.POST['title'],start=req.POST['start'])
+        item_sub.save()
+        user_item.calenders.add(item_sub)
 
     if(item_name == 'Tureesiin_Uilchilgee'):
         item_sub = Tureesiin_Uilchilgee.objects.get(pk=item_id)
@@ -117,6 +123,7 @@ def cart(req):
             cart_size += user_item.surgalt.count()
             cart_size += user_item.neriin.count()
             cart_size += user_item.turees.count()
+            cart_size += user_item.calenders.count()
             cart_size += user_item.hamtragch.count()
             if cart_size == 0:
                 req.session["cartSize"] = 0
@@ -130,6 +137,7 @@ def cart(req):
     yslol = user_item.yslol.all()
     surgalt = user_item.surgalt.all()
     neriin = user_item.neriin.all()
+    calender = user_item.calenders.all()
     turees = user_item.turees.all()
     baiguulga = user_item.hamtragch.all()
 
@@ -139,6 +147,7 @@ def cart(req):
         'neriin' : neriin,
         'turees' : turees,
         'baiguulga' : baiguulga,
+        'calenders' : calender,
         'cartSize' : size
        })
 

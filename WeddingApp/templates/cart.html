@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
   <div class="container-fluid bg-secondary p-5 px-5 py-5 d-flex flex-column justify-content-center align-items-center">
@@ -115,6 +116,25 @@
 	{% endfor %}
       </div>
 
+      <!-- Кальндарчилсан Төвлөгөө -->
+      <section class="page-section" id="tuwluguu">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-sm-12">
+	      <h1 class="text-uppercase font-weight-bolder text-center">Кальндарчилсан Төвлөгөө</h1>
+	      <hr class="w-25 h-25">
+	    </div>
+	  </div>
+
+	  <div class="row mt-5">
+	    <div class="col">
+	      <div id="calendar" style="height: 800px"></div>
+	    </div>
+	  </div>
+	</div>
+
+      </section>
+
       <div class="row mt-4">
 	<div class="col-sm-12">
 	  <hr class="w-25 h-25 border-white">
@@ -134,7 +154,13 @@
 {% endblock %}
 
 {% block js %}
+    <script src='{% static '/packages/core/main.js' %}'></script>
+    <script src='{% static '/packages/interaction/main.js' %}'></script>
+    <script src='{% static '/packages/daygrid/main.js' %}'></script>
+    <script src='{% static '/packages/timegrid/main.js' %}'></script>
+
   <script>
+
     let sum = 0;
     $(".item-price").each( function(){
       sum += parseInt($(this).text());
@@ -146,5 +172,66 @@
     }else{
       $("#full-price").text("$ " + sum);
     }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+	plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
+	header: {
+	  left: 'prev,next today',
+	  center: 'title',
+	  right: 'dayGridMonth,timeGridWeek,timeGridDay'
+	},
+	defaultDate: '2020-02-12',
+	navLinks: true, // can click day/week names to navigate views
+	selectable: true,
+	selectMirror: true,
+	select: function(arg) {
+	  var title = prompt('Event Title:');
+	  if (title) {
+	    calendar.addEvent({
+	      title: title,
+	      start: arg.start,
+	      end: arg.end,
+	      allDay: arg.allDay
+	    })
+	  }
+	  calendar.unselect()
+	},
+	editable: true,
+	eventBackgroundColor: 'white',
+	eventTextColor: 'dark',
+	eventLimit: false, // allow "more" link when too many events
+	eventClick: function(info){
+	  {% if request.user.is_authenticated %}
+	    $.post('/cartAdd/',{ 'title' : info.event.title , 'start' : info.event.start , 'itemName' : 'Calender'});
+	  {% else %}
+	    alert('Та Нэвтэрж Орно Уу!');
+	  {% endif %}
+	},
+	events: [
+	{% for i in calender %}
+	  {% if i.title == 'Билэгт Сайн Өдөр' %}
+	    {
+	      title: '{{i.title}}',
+	      start: '{{i.start|date:"Y-m-d"}}',
+	      color: 'red', 
+	      textColor: 'white'
+	    },
+	  {% else %}
+	    {
+	      title: '{{i.title}}',
+	      start: '{{i.start|date:"Y-m-d"}}',
+	    },
+	  {% endif %}
+	{% endfor %}
+	]
+
+      });
+
+      calendar.render();
+    });
   </script>
 {% endblock %}

@@ -9,6 +9,9 @@ class Hurimiin_Yslol_Uilchilgee(models.Model):
     def __str__(self):
         return self.name
 
+class Calender(models.Model):
+    title=models.CharField(max_length=250)
+    start=models.CharField(max_length=250)
 
 class Tureesiin_Uilchilgee(models.Model):
     name = models.CharField(max_length=250)
@@ -49,6 +52,7 @@ class Cart(models.Model):
     neriin  = models.ManyToManyField(Neriin_Buteegdehuun, related_name='+')
     surgalt = models.ManyToManyField(Surgalt, related_name='+')
     hamtragch = models.ManyToManyField(Hamtragch_Baiguulgiin_Zuuchlah_Uilchilgee, related_name='+')
+    calenders = models.ManyToManyField(Calender, related_name='+')
 
 
     def __str__(self):
